@@ -21,5 +21,8 @@ output/
 .DS_Store
 Thumbs.db
 
+# Config (contains sensitive info)
+config/config.json
+
 # Agent instructions
 AGENTS.md

@@ -1,0 +1,9 @@
+{
+    "username": "your_email@example.com",
+    "password": "your_password",
+    "sleep": 3600,
+    "output_file": "output/urls.txt",
+    "schedule_time": null,
+    "ssh_config_file": "~/.ssh/config",
+    "ssh_host_name": "SERVER"
+}
