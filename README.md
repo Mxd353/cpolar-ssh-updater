@@ -64,8 +64,8 @@ docker run -v $(pwd)/config:/app/config cpolar-checker -l
 | ----------------- | ---- | -------------------------------------------------------------- |
 | `username`        | 是   | cpolar 账号                                                    |
 | `password`        | 是   | cpolar 密码                                                    |
-| `sleep`           | 是   | 检查间隔（秒），默认 1800                                      |
-| `output_file`     | 否   | 隧道地址输出文件路径，默认 `output/urls.txt`                   |
+| `sleep`           | 否   | 检查间隔（秒），默认 1800，仅在 `-l`/`--loop` 模式下生效       |
+| `output_file`     | 否   | 隧道地址输出文件路径，默认 `output/urls.txt`，设为 `null` 禁用 |
 | `schedule_time`   | 否   | 定时记录时间，格式 `"HH:MM"`，如 `"08:00"`，设为 `null` 禁用   |
 | `ssh_config_file` | 否   | SSH config 文件路径，如 `~/.ssh/config`，设为 `null` 禁用      |
 | `ssh_host_name`   | 否   | 要修改的 Host 名字，如 `SERVER`，需配合 `ssh_config_file` 使用 |

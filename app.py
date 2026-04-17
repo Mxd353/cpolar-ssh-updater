@@ -127,8 +127,9 @@ def write_to_output(tunnels):
     将隧道地址写入输出文件
     :param tunnels: 隧道字典 {隧道名: [URL列表]}
     """
+    if not g_output_file:
+        return
     try:
-        # 确保输出目录存在
         output_dir = os.path.dirname(g_output_file)
         if output_dir and not os.path.exists(output_dir):
             os.makedirs(output_dir)
@@ -170,7 +171,11 @@ def read_config():
             username = config.get("username", "")
             password = config.get("password", "")
             g_sleep = config.get("sleep", 1800)
-            g_output_file = config.get("output_file", "output/urls.txt")
+            g_output_file = (
+                config.get("output_file", "output/urls.txt")
+                if config.get("output_file") is not None
+                else None
+            )
             g_schedule_time = config.get("schedule_time", None)
             g_ssh_config_file = config.get("ssh_config_file", None)
             g_ssh_host_name = config.get("ssh_host_name", None)
@@ -396,7 +401,7 @@ def main():
     )
     if g_schedule_time:
         logging.info(f"定时记录时间: {g_schedule_time}")
-    logging.info(f"输出文件: {g_output_file}")
+    logging.info(f"输出文件: {g_output_file if g_output_file else '禁用'}")
 
     if args.loop:
         # 循环监控模式
