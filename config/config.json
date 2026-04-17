@@ -1,0 +1,9 @@
+{
+    "username": "your_cpolar_username",
+    "password": "your_cpolar_password",
+    "sleep": 1800,
+    "output_file": "output/urls.txt",
+    "schedule_time": null,
+    "ssh_config_file": null,
+    "ssh_host_name": null
+}
